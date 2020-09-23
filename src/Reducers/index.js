@@ -5,6 +5,9 @@ const initialState = {
   index: 0,
   xIsNext: "",
   gameStart: false,
+  order:[],
+  isDemo:false
+ 
 };
 const playerReducer = function (state = initialState, action) {
   switch (action.type) {
@@ -18,6 +21,10 @@ const playerReducer = function (state = initialState, action) {
       return { ...state, matrix: action.matrix };
     case "UPDATE_NEXT":
       return { ...state, xIsNext: action.xIsNext };
+    case "UPDATE_ORDER":
+      return { ...state, order: action.order };  
+    case "SHOW_DEMO":
+      return { ...state, isDemo: action.isDemo };      
     default:
       return state;
   }

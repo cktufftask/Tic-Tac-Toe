@@ -86,3 +86,18 @@
   text-align: center;
   color: #fff;
 }
+.slider{
+  border-radius: 48%;
+  height: 35px;
+  width: 35px;
+  border: 0;
+  background-color: #5f9ea0;
+  margin: 10px;
+}
+
+.demo{
+  position: absolute;
+  top: 69px;
+  left: 37%;
+  background-color: #fff;
+}

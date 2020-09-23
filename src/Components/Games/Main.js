@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Game from "./Game";
 
 const Main = () => {
+  
   return (
     <>
       <div className="App container">
@@ -12,7 +13,7 @@ const Main = () => {
         <Player />
         <Game />
       </div>
-      <Footer message={'@chandan'} />
+      {/* <Footer message={'@chandan'} /> */}
     </>
   );
 };

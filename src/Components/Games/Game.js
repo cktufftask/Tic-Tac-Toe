@@ -3,6 +3,7 @@ import Board from "./Board";
 import StartNewGame from "./StartNewGame";
 import GameStatus from "./GameStatus";
 import PlayerName from "./PlayerName";
+import Demo from "./Demo";
 import { useSelector } from "react-redux";
 
 const Game = (props) => {
@@ -10,10 +11,14 @@ const Game = (props) => {
   const matrix = useSelector((state) => state.matrix);
   const player1 = useSelector((state) => state.player1);
   const player2 = useSelector((state) => state.player2);
+  const isDemo = useSelector((state) => state.isDemo);
 
   const checkIsFillAll = () => {
     return matrix.filter((x) => x === null);
   };
+  
+
+  
   const calculateGameWinner = () => {
     const rowCol = [
       [0, 1, 2],
@@ -48,7 +53,9 @@ const Game = (props) => {
       <br />
       <GameStatus winner={winner} />
       <br />
-      {winner && <StartNewGame />}
+      {winner && <StartNewGame winner={winner} />}
+      {winner && matrix && matrix.map((x) => console.log(matrix[x]))}
+      {isDemo && winner &&  winner !== -1 &&  <Demo />}
     </div>
   );
 };
