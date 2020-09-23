@@ -17,7 +17,7 @@ const StartNewGame = (props) => {
     dispatch({ type: "SHOW_DEMO", isDemo: false });
   };
   const showDemo=()=>{
-    dispatch({ type: "SHOW_DEMO", isDemo: true});
+    dispatch({ type: "SHOW_DEMO", isDemo:  !isDemo});
   }
   return (
     <p>
